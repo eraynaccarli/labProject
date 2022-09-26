@@ -1,5 +1,7 @@
 LAB PROJECT
 Dependency(Spring Security, Spring Boot, Thymeleaf, Bootstrap, Hibernate(JPA), MySQL Connector)
+
+
 Entities
 - Patient (her hastanın adı, soyadı, tc numarası, bulunuyor.)
 
@@ -28,6 +30,8 @@ Report
 - Birden fazla raporun bir hastası olabilir.(ManyToOne)
 
 İçerik
+
+
 Entity sınıflarımızı oluşturduk ve tablolarımızı mapledik.
 
 JPA olarak Hibernate ,Veri tabanı olarak Mysql kullandık.
