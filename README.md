@@ -64,10 +64,13 @@ Kayıtlarda silme işlemleri için bütün sayfalara delete butonu ekledik.
 
 ![login](https://user-images.githubusercontent.com/69572868/192263393-d1056045-f008-4cd2-be56-bcaa0790aef4.png)
 ![labRegister](https://user-images.githubusercontent.com/69572868/192263424-8dbe2fa0-43b6-46d6-ad4e-a72283d12e5e.png)
-![menu](https://user-images.githubusercontent.com/69572868/192263432-061e03c6-b1f4-47a9-853b-f66bc1c4ad3c.png)
+![menu](https://user-images.githubusercontent.com/69572868/192264628-f8e84496-72be-4a27-9d60-54aa8d7390eb.png)
 ![reports](https://user-images.githubusercontent.com/69572868/192263571-e12c9b62-2484-433a-9356-4ec880695a16.png)
 ![editReport](https://user-images.githubusercontent.com/69572868/192263598-142a2fde-3f63-455d-a086-d16010c08b6c.png)
 ![reportSearch](https://user-images.githubusercontent.com/69572868/192263621-df075213-7ebf-4d93-8fa7-74043c44dc78.png)
-![reports](https://user-images.githubusercontent.com/69572868/192263647-e30a4a74-33bc-40e8-9880-c3a5dbbeb36b.png)
+![laborants](https://user-images.githubusercontent.com/69572868/192264652-f1ce51fb-b9fa-47ba-a4b7-89e19cb42e70.png)
+![searchQuery](https://user-images.githubusercontent.com/69572868/192264715-1167ae23-8a9e-478a-9402-f3f9e03a6bec.png)
+![reportRegister](https://user-images.githubusercontent.com/69572868/192265223-e89e86fa-8817-469f-b4ae-2644e279a4a7.png)
+
 
 
