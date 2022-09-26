@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Patient Register</title>
+<link rel="stylesheet"
+	  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+	  crossorigin="anonymous">
+</head>
+<body>
+<br>
+<br>
+<br>
+		<!-- create navigation bar(header) -->
+		<nav class = "navbar navbar-inverse navbar-fixed-top">
+			<div class = "container">
+				<div class = "navbar-header">
+					<button type = "button" class = "navbar-toggle collapsed"
+						data-toggle = "collapse" data-target="#navbar" aria-expanded="false"
+						aria-controls="navbar">
+						<span class = "sr-only">Toggle navigation</span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+						<span class = "icon-bar"></span>
+					</button>
+					<a class = "navbar-brand" href="#" th:href="@{/}">Patient Registration Module</a>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Create HTML registration form -->
+			<div class = "container">
+				<div class = "row">
+					<div class = "col-md-6 col-md-offset-3">
+					
+					<!--success message-->
+					<div th:if="${param.success}">
+						<div class = "alert alert-info">You've successfully registered!</div>
+					</div>
+					<h1>Patient Registration</h1>
+						<form th:action="@{/registrationPatient}" method = "post" th:object = "${patient}">
+						<div class = "form-group">
+							<label class = "control-label" for="patientName">
+							First Name</label>
+							<input id = "patientName" class = "form-control" th:field="*{patientName}" required autofocus="autofocus"/>
+						</div>
+						
+						<div class = "form-group">
+							<label class = "control-label" for="patientSurname">
+							Last Name</label>
+							<input id = "patientSurname" class = "form-control" th:field="*{patientSurname}" required autofocus="autofocus"/>
+						</div>
+						
+						<div class = "form-group">
+							<label class = "control-label" for="patientTc">
+							TC</label>
+							<input id = "patientTc" class = "form-control" th:field="*{patientTc}" required autofocus="autofocus"/>
+						</div>
+			
+						
+						<div class = "form-group">
+							<button type = "submit" class = "btn btn-success">Register</button>
+							<span>Already registered? <a href= "/" th:href="@{/patients}">Patients List</a></span>
+						</div>
+							
+							</form>
+					</div>
+				</div>
+			</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Laborants</title>
+    <link rel = "stylesheet" type = "text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class = "container-fluid text-center">
+		<div><h2>Laborants</h2></div>
+		<div class = "m-2">
+			<a class = "h3" th:href="@{/registrationLaborant}">Add New Laborant</a>
+		</div>
+			<div>&nbsp;</div>
+			
+				<div>
+					<form th:action = "@{/laborants}">
+						Filter:
+						<input type = "text" name = "keyword" required />
+						&nbsp;
+						<input type = "submit" value = "Search" class = "btn btn-success"/>
+						&nbsp;
+						<input type = "submit" value = "Clear" class = "btn btn-success"/>
+					</form>
+				</div>
+			<div>&nbsp;</div>
+			
+		<div>
+        <table class = "table table-bordered">
+                <thead class = "thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+						<th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="laborant : ${listLaborants}">
+                <tr>
+                	<td>[[${laborant.laborantId}]]</td>
+                	<td>[[${laborant.laborantName}]]</td>
+                	<td>[[${laborant.laborantSurname}]]</td>
+              		<td>[[${laborant.email}]]</td>
+                	<td>
+                		<a class = "h4 mr-3" th:href="@{'/registrationLaborant/' + ${laborant.laborantId}}">Edit</a>
+                		<a class = "h4" th:href="@{'/laborant/delete/' + ${laborant.laborantId}}">Delete</a>
+                		&nbsp;&nbsp;
+                		<a class = "h4" th:href="@{/}">MENU</a>
+                	</td>	
+                </tr>
+                </th:block>
+                </tbody>
+        </table>
+		
+		</div>
+	</body>
+	</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>[[${pageTitle}]]</title>
+<link rel="stylesheet"
+	  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+	  crossorigin="anonymous">
+   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	  
+</head>
+<body>
+<div class = "container-fluid text-center">
+		<div></div><h2>[[${pageTitle}]]</h2></div>
+		
+		
+		
+		<form th:action="@{/registrationReport}" method="post" th:object="${report}"  enctype="multipart/form-data"
+			style="max-width: 500px; margin: 0 auto;">
+			<input type = "hidden" th:field="*{reportId}">
+			<div class = "border border-secondary rounded p-3">
+				
+				
+		
+				<div class = "form-group row">
+				  <label class = "col-sm-4 col-form-label">Report Title:</label>
+				  	<div class = "col-sm-8">
+				 		<input type = "text" th:field="*{reportTitle}" class = "form-control"  required minlength="2" maxlength = "45"/>
+				
+					</div>
+				</div>
+				
+				<div class = "form-group row">
+					  <label class = "col-sm-4 col-form-label">Report Description:</label>
+					  	<div class = "col-sm-8">
+				 			<textarea th:field="*{reportDescription}" class = "form-control"  rows="5" cols="100" required minlength="2" maxlength = "300"></textarea>
+				
+						</div>
+				</div>
+				
+				
+				<div class = "form-group row">
+					  <label class = "col-sm-4 col-form-label">Report Date:</label>
+					  	<div class = "col-sm-8">
+				 			<input type = "text" th:field="*{date}" class = "form-control"  required minlength="2" maxlength = "45" />
+				
+						</div>
+				</div>
+				
+				
+			
+	
+				
+			
+				<div class = "form-group">
+						 <label>Image: </label>
+   						 <input type="file" name="image" accept="image/png, image/jpeg" id = "img"/>
+				</div>
+						
+					<o>
+						<img id = "thumbnail" alt = "image preview"/>
+						
+	      			</o>
+				
+				</div>
+				
+
+				</div>
+				
+				<div class = "text-center">
+					<button type = "submit" class = "btn btn-primary m-2">Save</button>
+						<button type = "button" class = "btn btn-secondary m-2" onclick = "cancelForm()" >Cancel</button>
+				</div>
+			</div>
+		
+		</form>
+
+</div>
+
+<script type = "text/javascript">
+	function cancelForm(){
+		window.location = "[[@{/reports}]]";
+	}
+	
+</script>
+
+
+<script type = "text/javascript">
+	$('#img').change(function(){
+		showImageThumbnail(this);
+	});
+	
+	function showImageThumbnail(fileInput){
+		file = fileInput.files[0];
+		reader = new FileReader();
+		reader.onload = function(e){
+			$('#thumbnail').attr('src', e.target.result);
+		};
+		reader.readAsDataURL(file);
+	}
+
+</script>			
+	
+</body>
+</html>
